@@ -5,12 +5,22 @@ class Employee {
         this.salary = salary;
         this.title = title;
         this.manager = manager;
+
+        if(this.manager) {
+            this.manager.addEmployee(this);
+        }
+    }
+
+    // calculate bonus by passing in a multiplier to multiply by the employee's salary
+    calculateBonus(multiplier) {
+        return this.salary * multiplier;
     }
 }
+// multiply salary (this.salary) by multiplier passed in
+// return result
 
-// test snippet
-// const leo = new Employee('Leonardo', 90000, 'Ninja', 'Harry');
-// console.log(leo)
+
+
 
 // Export Employee class
 try {
